@@ -18,7 +18,7 @@ public class Heroi : MonoBehaviour
     void Update()
     {
         //Movimento
-        float velX = Input.GetAxis("Horizontal");
+        float velX = Input.GetAxis("Horizontal")*4;
         Corpo.velocity = new Vector2(velX, 0);
 
         if(velX == 0)
