@@ -27,8 +27,20 @@ public class Heroi : MonoBehaviour
         else
         {
             Anim.SetBool("Andar", true);
+            if(velX < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Anim.SetTrigger("Ataque");
+        }
 
     }
 }
