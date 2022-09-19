@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Esqueleto : MonoBehaviour
+public class Atk : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,14 +15,13 @@ public class Esqueleto : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerStay2D(Collider2D colidiu)
+    private void OnTriggerEnter2D(Collider2D colidiu)
     {
-        if(colidiu.gameObject.tag == "AtaqueHeroi")
+        if (colidiu.gameObject.tag == "Inimigo")
         {
-            Destroy(this.gameObject);
+            Destroy(colidiu.gameObject);
         }
-        
+
     }
 
 }
