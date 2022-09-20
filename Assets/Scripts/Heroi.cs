@@ -7,7 +7,7 @@ public class Heroi : MonoBehaviour
     private Rigidbody2D Corpo;
     private Animator Anim;
     public GameObject MeuAtk;
-    public int qtdPulos = 1;
+    public int qtdpulos = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,11 +46,14 @@ public class Heroi : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(qtdPulos > 0) {
-                qtdPulos--;
+           if(qtdpulos > 0)
+            {
+                qtdpulos--;
                 Pular();
-
             }
+                
+
+           
             
         }
 
@@ -76,8 +79,7 @@ public class Heroi : MonoBehaviour
     {
         if(colidiu.gameObject.tag == "Chao")
         {
-            qtdPulos = 1;
+            qtdpulos = 2;
         }
     }
-
 }
