@@ -19,7 +19,8 @@ public class Heroi : MonoBehaviour
     {
         //Movimento
         float velX = Input.GetAxis("Horizontal")*4;
-        Corpo.velocity = new Vector2(velX, 0);
+        float minhaG = Corpo.velocity.y;
+        Corpo.velocity = new Vector2(velX, minhaG);
 
         if(velX == 0)
         {
@@ -42,7 +43,17 @@ public class Heroi : MonoBehaviour
         {
             Anim.SetTrigger("Ataque");
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Pular();
+        }
 
+    }
+
+
+    void Pular()
+    {
+        Corpo.AddForce(Vector2.up * 330);
     }
 
     public void AtivarATK()
