@@ -21,6 +21,7 @@ public class Heroi : MonoBehaviour
         //Movimento
         float velX = Input.GetAxis("Horizontal")*4;
         float minhaG = Corpo.velocity.y;
+        
         Corpo.velocity = new Vector2(velX, minhaG);
 
         if(velX == 0)
