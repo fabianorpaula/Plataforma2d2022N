@@ -8,6 +8,8 @@ public class Heroi : MonoBehaviour
     private Animator Anim;
     public GameObject MeuAtk;
     public int qtdpulos = 2;
+    public GameObject AtaqueDisparo;
+    private string lado = "Direita";
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +36,14 @@ public class Heroi : MonoBehaviour
             if(velX < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
+                lado = "Esquerda";
             }
             else
             {
                 transform.localScale = new Vector3(1, 1, 1);
+                lado = "Direita";
+
+
             }
         }
 
@@ -45,6 +51,12 @@ public class Heroi : MonoBehaviour
         {
             Anim.SetTrigger("Ataque");
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Disparo();
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
            if(qtdpulos > 0)
@@ -65,6 +77,14 @@ public class Heroi : MonoBehaviour
     {
         Corpo.AddForce(Vector2.up * 330);
     }
+
+    public void Disparo()
+    {
+        GameObject Dps = Instantiate(AtaqueDisparo, transform.position, Quaternion.identity);
+        Dps.GetComponent<AtkLanca>().Lado(lado);
+        Destroy(Dps, 3f);
+    }
+
 
     public void AtivarATK()
     {
