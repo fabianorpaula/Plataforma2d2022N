@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2877555423536266363}
   - component: {fileID: 2877555423536266364}
   - component: {fileID: 2877555423536266365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vento
   m_TagString: AtaqueHeroi
   m_Icon: {fileID: 0}
