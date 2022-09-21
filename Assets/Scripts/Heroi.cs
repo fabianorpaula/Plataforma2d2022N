@@ -53,7 +53,7 @@ public class Heroi : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Disparo();
+            Anim.SetTrigger("AtaqueL");
         }
 
 

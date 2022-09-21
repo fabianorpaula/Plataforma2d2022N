@@ -10,7 +10,7 @@ public class AtkLanca : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Sp = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -25,12 +25,14 @@ public class AtkLanca : MonoBehaviour
         {
             direcao = "Esquerda";
             velocidade = -0.1f;
+            Sp = GetComponent<SpriteRenderer>();
             Sp.flipX = true;
         }
         if(ladoEscolhido == "Direita")
         {
             direcao = "Direita";
             velocidade = 0.1f;
+            Sp = GetComponent<SpriteRenderer>();
             Sp.flipX = false;
         }
     }
