@@ -9,6 +9,7 @@ public class Heroi : MonoBehaviour
     public GameObject MeuAtk;
     public int qtdpulos = 2;
     public GameObject AtaqueDisparo;
+    public GameObject PontoDeSaida;
     private string lado = "Direita";
     // Start is called before the first frame update
     void Start()
@@ -80,7 +81,7 @@ public class Heroi : MonoBehaviour
 
     public void Disparo()
     {
-        GameObject Dps = Instantiate(AtaqueDisparo, transform.position, Quaternion.identity);
+        GameObject Dps = Instantiate(AtaqueDisparo, PontoDeSaida.transform.position, Quaternion.identity);
         Dps.GetComponent<AtkLanca>().Lado(lado);
         Destroy(Dps, 3f);
     }
