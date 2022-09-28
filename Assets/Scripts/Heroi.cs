@@ -11,6 +11,7 @@ public class Heroi : MonoBehaviour
     public GameObject AtaqueDisparo;
     public GameObject PontoDeSaida;
     private string lado = "Direita";
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Heroi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         //Movimento
         float velX = Input.GetAxis("Horizontal")*4;
         float minhaG = Corpo.velocity.y;

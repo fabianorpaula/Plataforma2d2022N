@@ -12,11 +12,15 @@ public class Caveira : MonoBehaviour
     public float posFinal;
     private int vida = 3;
     private bool morreu = false;
+    private GameObject MeuHeroi;
+    public GameObject AreaAtkInimigo;
+
     // Start is called before the first frame update
     void Start()
     {
         Corpo = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        MeuHeroi = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -31,7 +35,16 @@ public class Caveira : MonoBehaviour
         }
         else
         {
-            Mover();
+            float distancia = Vector3.Distance(transform.position, MeuHeroi.transform.position);
+            if(distancia < 3)
+            {
+                Ataque();
+            }
+            else
+            {
+                Mover();
+            }
+            
         }
         
     }
@@ -63,9 +76,24 @@ public class Caveira : MonoBehaviour
     {
         if (colidiu.gameObject.tag == "AtaqueHeroi")
         {
+            colidiu.gameObject.SetActive(false);
             Anim.SetTrigger("Dano");
         }
 
+    }
+
+    void Ataque()
+    {
+        Corpo.velocity = new Vector2(0, 0);
+        Anim.SetTrigger("Ataque");
+        if(transform.position.x > MeuHeroi.transform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     public void PerdeuHP()
@@ -88,5 +116,19 @@ public class Caveira : MonoBehaviour
     public void Desaparecer()
     {
         Destroy(this.gameObject);
+    }
+
+    public int infoVida()
+    {
+        return vida;
+    }
+
+    public void AtivaAtk()
+    {
+        AreaAtkInimigo.SetActive(true);
+    }
+    public void DesativaAtk()
+    {
+        AreaAtkInimigo.SetActive(false);
     }
 }
