@@ -47,7 +47,7 @@ public class AtkLanca : MonoBehaviour
     {
         if (colidiu.gameObject.tag == "Inimigo")
         {
-            Destroy(colidiu.gameObject);
+            //Destroy(colidiu.gameObject);
             Destroy(this.gameObject);
         }
 
