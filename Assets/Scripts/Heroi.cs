@@ -11,7 +11,8 @@ public class Heroi : MonoBehaviour
     public GameObject AtaqueDisparo;
     public GameObject PontoDeSaida;
     private string lado = "Direita";
-    
+    public int HP = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +77,7 @@ public class Heroi : MonoBehaviour
     }
 
 
+
     void Pular()
     {
         Corpo.AddForce(Vector2.up * 330);
@@ -105,5 +107,22 @@ public class Heroi : MonoBehaviour
         {
             qtdpulos = 2;
         }
+        if (colidiu.gameObject.tag == "AtaqueInimigo")
+        {
+            colidiu.gameObject.SetActive(false);
+            
+            Anim.SetTrigger("Dano");
+        }
     }
+
+
+    public void PerdeHP()
+    {
+        HP--;
+        if (HP <= 0)
+        {
+            Anim.SetBool("Morto", true);
+        }
+    }
+
 }
