@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Heroi : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Heroi : MonoBehaviour
     public GameObject AtaqueDisparo;
     public GameObject PontoDeSaida;
     private string lado = "Direita";
-    public int HP = 10;
+    private int HP = 10;
+    public Slider MinhaBarraDeVida;
 
     // Start is called before the first frame update
     void Start()
@@ -119,6 +121,7 @@ public class Heroi : MonoBehaviour
     public void PerdeHP()
     {
         HP--;
+        MinhaBarraDeVida.value = HP;
         if (HP <= 0)
         {
             Anim.SetBool("Morto", true);
