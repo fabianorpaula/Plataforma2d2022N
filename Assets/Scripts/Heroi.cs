@@ -14,6 +14,7 @@ public class Heroi : MonoBehaviour
     private string lado = "Direita";
     private int HP = 10;
     public Slider MinhaBarraDeVida;
+    private int moedas;
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +116,12 @@ public class Heroi : MonoBehaviour
             
             Anim.SetTrigger("Dano");
         }
+        if(colidiu.gameObject.tag == "Moeda")
+        {
+            moedas++;
+            GameObject.FindGameObjectWithTag("SomMoeda").GetComponent<AudioSource>().Play();
+            Destroy(colidiu.gameObject);
+        }
     }
 
 
@@ -126,6 +133,12 @@ public class Heroi : MonoBehaviour
         {
             Anim.SetBool("Morto", true);
         }
+    }
+
+    //Função
+    public int ValorMoedas()
+    {
+        return moedas;
     }
 
 }

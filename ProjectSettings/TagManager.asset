@@ -9,6 +9,8 @@ TagManager:
   - Chao
   - Exemplo
   - AtaqueInimigo
+  - Moeda
+  - SomMoeda
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Heroi
   - Ataques
   - Monstros
-  - 
-  - 
+  - Moedas
+  - Chao
   - 
   - 
   - 
