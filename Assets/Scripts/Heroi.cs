@@ -141,4 +141,9 @@ public class Heroi : MonoBehaviour
         return moedas;
     }
 
+    public void ChamarGameOver()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Controlador>().Morreu();
+    }
+
 }
