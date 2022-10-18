@@ -441,6 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 302776760}
   - component: {fileID: 302776759}
+  - component: {fileID: 302776761}
   m_Layer: 0
   m_Name: CloudsBack (2)
   m_TagString: Untagged
@@ -515,6 +516,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &302776761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302776758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c7cce9b600a9f4fbbef4f303a60df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 1
 --- !u!1 &346625791
 GameObject:
   m_ObjectHideFlags: 0
@@ -9306,6 +9320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375524732}
   - component: {fileID: 1375524731}
+  - component: {fileID: 1375524733}
   m_Layer: 0
   m_Name: CloudsBack (1)
   m_TagString: Untagged
@@ -9380,6 +9395,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375524733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375524730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c7cce9b600a9f4fbbef4f303a60df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 1
 --- !u!1 &1385656640
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,6 +9648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1467789455}
   - component: {fileID: 1467789454}
+  - component: {fileID: 1467789456}
   m_Layer: 0
   m_Name: CloudsBack
   m_TagString: Untagged
@@ -9694,6 +9723,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467789456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467789453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c7cce9b600a9f4fbbef4f303a60df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 1
 --- !u!1 &1489924143
 GameObject:
   m_ObjectHideFlags: 0
