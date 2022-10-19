@@ -11,6 +11,8 @@ TagManager:
   - AtaqueInimigo
   - Moeda
   - SomMoeda
+  - CheckPoint
+  - Morte
   layers:
   - Default
   - TransparentFX

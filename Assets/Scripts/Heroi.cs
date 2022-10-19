@@ -15,6 +15,7 @@ public class Heroi : MonoBehaviour
     private int HP = 10;
     public Slider MinhaBarraDeVida;
     private int moedas;
+    public int vidas = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -106,21 +107,25 @@ public class Heroi : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D colidiu)
     {
-        if(colidiu.gameObject.tag == "Chao")
+        if (colidiu.gameObject.tag == "Chao")
         {
             qtdpulos = 2;
         }
         if (colidiu.gameObject.tag == "AtaqueInimigo")
         {
             colidiu.gameObject.SetActive(false);
-            
+
             Anim.SetTrigger("Dano");
         }
-        if(colidiu.gameObject.tag == "Moeda")
+        if (colidiu.gameObject.tag == "Moeda")
         {
             moedas++;
             GameObject.FindGameObjectWithTag("SomMoeda").GetComponent<AudioSource>().Play();
             Destroy(colidiu.gameObject);
+        }
+        if (colidiu.gameObject.tag == "Morte")
+        {
+            ChamarGameOver();
         }
     }
 
@@ -131,6 +136,7 @@ public class Heroi : MonoBehaviour
         MinhaBarraDeVida.value = HP;
         if (HP <= 0)
         {
+            
             Anim.SetBool("Morto", true);
         }
     }
@@ -143,7 +149,25 @@ public class Heroi : MonoBehaviour
 
     public void ChamarGameOver()
     {
+        vidas--;
         GameObject.FindGameObjectWithTag("GameController").GetComponent<Controlador>().Morreu();
     }
 
+    //Informa Quantidade de Vidas
+    public int MinhasVidas()
+    {
+        return vidas;
+    }
+
+    //Revivo Meu Heroi;
+    //Esse metodo precisa de um parametro
+    public void NovaChance(Vector3 checkPosition)
+    {
+        HP = 10;
+        qtdpulos = 2;
+        Anim.SetBool("Morto", false);
+        Anim.SetTrigger("Reviver");
+        transform.position = checkPosition;
+
+    }
 }

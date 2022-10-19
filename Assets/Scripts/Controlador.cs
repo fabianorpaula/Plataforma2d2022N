@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Controlador : MonoBehaviour
 {
     public GameObject GameOver;
+    public GameObject Checkpoint;
+    public GameObject MeuHeroi;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,16 @@ public class Controlador : MonoBehaviour
 
     public void Morreu()
     {
-        GameOver.SetActive(true);
+        
+        //perguntando para o heroi
+        int qtdVidas = MeuHeroi.GetComponent<Heroi>().MinhasVidas();
+        if(qtdVidas > 0)
+        {
+            MeuHeroi.GetComponent<Heroi>().NovaChance(Checkpoint.transform.position);
+        }else
+        {
+            GameOver.SetActive(true);
+        }
+        
     }
 }
